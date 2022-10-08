@@ -30,7 +30,7 @@ export function InputSelect<TItem>({
     [consumerOnChange]
   )
 
-  const inputAndLabelRef = useRef<HTMLHeadingElement>(null);
+  const inputAndLabelRef = useRef<HTMLDivElement>(null);
 
   useEffect(()=>{
 
