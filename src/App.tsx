@@ -10,9 +10,12 @@ import { EMPTY_EMPLOYEE } from "./utils/constants"
 
 export function App() {
   const { data: employees, ...employeeUtils } = useEmployees()
+  const [employeeFilterId,setEmployeeFilterId]= useState("");
   const { data: paginatedTransactions, ...paginatedTransactionsUtils } = usePaginatedTransactions()
   const { data: transactionsByEmployee, ...transactionsByEmployeeUtils } = useTransactionsByEmployee()
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+
+  
 
   const transactions = useMemo(
     () => paginatedTransactions?.data ?? transactionsByEmployee ?? null,
@@ -25,6 +28,7 @@ export function App() {
 
     await employeeUtils.fetchAll()
     await paginatedTransactionsUtils.fetchAll()
+    console.log(paginatedTransactions?.data, 'INSIDE FUNCTION DATA')
 
     setIsLoading(false)
   }, [employeeUtils, paginatedTransactionsUtils, transactionsByEmployeeUtils])
@@ -64,6 +68,7 @@ export function App() {
             if (newValue === null) {
               return
             }
+            setEmployeeFilterId(newValue.id);
             if (newValue.id !== "") {
               await loadTransactionsByEmployee(newValue.id)
             }
@@ -85,7 +90,7 @@ export function App() {
                   <TransactionPane key={transaction.id} transaction={transaction} />
                 ))}
               </div>
-              <button
+              {(employeeFilterId==="" && paginatedTransactions?.nextPage !== null)&&<button
                 className="RampButton"
                 disabled={paginatedTransactionsUtils.loading}
                 onClick={async () => {
@@ -93,7 +98,7 @@ export function App() {
                 }}
               >
                 View More
-              </button>
+              </button>}
             </Fragment>
           )}
         </div>
