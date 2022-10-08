@@ -100,7 +100,7 @@ We don't have a real API for this challenge, so we added some utilities to simul
 
 **Actual:** The page crashes
 
-# Bug 4: Clicking on View More button not showing correct data ()
+# Bug 4: Clicking on View More button not showing correct data (DONE)
 
 **How to reproduce:**
 
@@ -111,7 +111,7 @@ We don't have a real API for this challenge, so we added some utilities to simul
 
 **Actual:** New transactions replace initial transactions, losing initial transactions
 
-# Bug 5: Employees filter not available during loading more data
+# Bug 5: Employees filter not available during loading more data 
 
 _This bug has 2 wrong behaviors that will be fixed with the same solution_
 

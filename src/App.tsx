@@ -28,7 +28,7 @@ export function App() {
 
     await employeeUtils.fetchAll()
     await paginatedTransactionsUtils.fetchAll()
-    console.log(paginatedTransactions?.data, 'INSIDE FUNCTION DATA')
+
 
     setIsLoading(false)
   }, [employeeUtils, paginatedTransactionsUtils, transactionsByEmployeeUtils])
