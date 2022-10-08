@@ -33,8 +33,8 @@ export function InputSelect<TItem>({
   const inputAndLabelRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(()=>{
-    const GAP_BETWEEN_DROPDOWN_AND_INPUT =
-    setDropdownPosition({top : (inputAndLabelRef.current?.clientHeight || 0)+20,left : 0});
+
+    setDropdownPosition({top : (inputAndLabelRef.current?.clientHeight || 0),left : 0});
   }, [inputAndLabelRef])
 
 
@@ -68,7 +68,6 @@ export function InputSelect<TItem>({
             <div
               className="RampInputSelect--input"
               onClick={(event) => {
-                // setDropdownPosition(getDropdownPosition(event.target))
                 toggleProps.onClick(event)
               }}
             >
