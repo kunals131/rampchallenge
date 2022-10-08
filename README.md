@@ -111,7 +111,7 @@ We don't have a real API for this challenge, so we added some utilities to simul
 
 **Actual:** New transactions replace initial transactions, losing initial transactions
 
-# Bug 5: Employees filter not available during loading more data 
+# Bug 5: Employees filter not available during loading more data (DONE)
 
 _This bug has 2 wrong behaviors that will be fixed with the same solution_
 
@@ -139,7 +139,7 @@ _This bug has 2 wrong behaviors that will be fixed with the same solution_
 
 **Actual:** The employees filter shows "Loading employees..." after clicking **View more** until new transactions are loaded.
 
-# Bug 6: View more button not working as expected
+# Bug 6: View more button not working as expected (DONE)
 
 _This bug has 2 wrong behaviors that can be fixed with the same solution. It's acceptable to fix with separate solutions as well._
 
